@@ -3,7 +3,7 @@ import 'dart:io';
 
 void main(List<String> arguments) async {
   print('TCP Server');
-  final server = await ServerSocket.bind('0.0.0.0', 9001);
+  final server = await ServerSocket.bind('127.0.0.1', 8080);
   var twoDListP1 = List<List>.generate(10, (i) => List<dynamic>.generate(10, (index) => 0, growable: false), growable: false);
   var twoDListP2 = List<List>.generate(10, (i) => List<dynamic>.generate(10, (index) => 0, growable: false), growable: false);
 

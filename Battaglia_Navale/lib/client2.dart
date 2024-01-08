@@ -7,7 +7,7 @@ void main(List<String> arguments) async {
   bool inGame = true;
   String resServ = "";
   while(resServ != "Finito"){
-    socket = await Socket.connect('127.0.0.1', 9001);
+    socket = await Socket.connect('127.0.0.1', 8080);
     socket.listen((eventBytes) {
       String result = utf8.decode(eventBytes);
       resServ = result;
@@ -34,7 +34,7 @@ void main(List<String> arguments) async {
     socket.destroy();
   }
   while(inGame) {
-    socket = await Socket.connect('127.0.0.1', 9001);
+    socket = await Socket.connect('127.0.0.1', 8080);
     socket.listen((eventBytes) {
       String result = utf8.decode(eventBytes);
       if(result == "You Loose"){
